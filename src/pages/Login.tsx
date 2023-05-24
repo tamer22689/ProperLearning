@@ -5,18 +5,17 @@ import "./Login.css"
 
 function Login() {
     const navigate = useNavigate(); 
-    const routeChange = () =>{ 
+    const routeChange_home = () =>{ 
         const path = "/"; 
         navigate(path);
     }
-   
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
       const logiSucces=()=>{
-        if(username === 'tamer' && password==='123'){
-            routeChange();
+        if(username === 'tamer' && password ==='123'){
+            routeChange_home();
 
         }else if (username === '' || password === '') {
             setErrorMessage('אנא מלא את כל השדות');
@@ -24,10 +23,7 @@ function Login() {
         else{
             setErrorMessage('');
         }
-
       };
-      
-    
     return (
         <>
             <h1>Login</h1>
@@ -38,7 +34,6 @@ function Login() {
             <div className="password">{password}</div>
             <Button onClick={logiSucces}>submit</Button>
             <div>{errorMessage}</div>
-            
         </>
     )
 }
