@@ -5,11 +5,12 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import './index.css'
 import Login from './components/Login.tsx';
+import HomePage from './pages/HomePage';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <HomePage />,
   },
   {
     path: "/Login",
