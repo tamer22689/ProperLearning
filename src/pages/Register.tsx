@@ -2,6 +2,8 @@ import { Button, Input } from "@chakra-ui/react"
 import "./Register.css"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import UserStore from "../stores/UserStore";
+import { toJS } from "mobx";
 
 const Register = () => {
 
@@ -14,8 +16,15 @@ const Register = () => {
     
     const navigate = useNavigate(); 
     const routeChange = () =>{ 
-        const path = "/"; 
-        navigate(path);
+        // todo: check is password === confirmPassword
+        console.log(toJS(UserStore.users));
+        const newUser: User = {
+          username, password, fname: firstname, lname: lastname, 
+        }
+        UserStore.addUser(newUser);
+
+        console.log(toJS(UserStore.users));
+        navigate('/');
     }
   return (
     <>

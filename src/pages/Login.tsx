@@ -2,6 +2,8 @@ import { Button, Input } from "@chakra-ui/react"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
+import UserStore from "../stores/UserStore";
+import { toJS } from "mobx";
 
 function Login() {
     const navigate = useNavigate(); 
@@ -14,13 +16,22 @@ function Login() {
     const [errorMessage, setErrorMessage] = useState('');
 
       const logiSucces=()=>{
-        if(username === 'tamer' && password ==='123'){
-            routeChange_home();
+        // if(username === 'tamer' && password ==='123'){
+        //     routeChange_home();
 
-        }else if (username === '' || password === '') {
-            setErrorMessage('אנא מלא את כל השדות');
-          }
-        else{
+        // }else if (username === '' || password === '') {
+        //     setErrorMessage('אנא מלא את כל השדות');
+        //   }
+        // else{
+        //     setErrorMessage('');
+        // }
+        console.log(toJS(UserStore.users));
+        const result = UserStore.login(username, password);
+        console.log(result)
+        if(result)
+            routeChange_home();
+        else {
+            // todo: present error message
             setErrorMessage('');
         }
       };
