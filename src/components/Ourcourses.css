@@ -1,0 +1,6 @@
+.ourcourses{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    background-color: rgb(220, 211, 211);
+}

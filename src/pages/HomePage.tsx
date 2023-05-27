@@ -1,10 +1,10 @@
 import "./HomePage.css"
-import { Button } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 import UserInfo from "../components/UserInfo";
 import Search from "../components/Search";
 import Logo1 from '../assets/images/Logo1.png'
-
+import Menu from '../components/Menu'
+import OurCourses from "../components/OurCourses";
 const HomePage = () => {
     const navigate = useNavigate(); 
     const routeChange = () =>{ 
@@ -25,6 +25,8 @@ const HomePage = () => {
         </div>        
       </div>
       {/* <Button onClick={routeChange}>Login</Button> */}
+      <Menu/>
+      <OurCourses/>
     </>
   )
 }
