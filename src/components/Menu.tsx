@@ -1,9 +1,6 @@
 import { Button } from '@chakra-ui/react';
 import './Menu.css'
-import { createBrowserRouter,Navigate, RouterProvider, useNavigate } from "react-router-dom";
-import HomePage from '../pages/HomePage';
-
-
+import { useNavigate } from "react-router-dom";
 
  function Menu() {
     const navigate = useNavigate();
@@ -14,23 +11,23 @@ import HomePage from '../pages/HomePage';
     const routerChangeCourses=()=>{
         const path = "/Courses"
         navigate(path);
-
     }
+
     const routerChangeLecturers=()=>{
         const path = "/Lecturers"
         navigate(path);
-
     }
+
     const routerChangeExams=()=>{
         const path = "/Exams"
         navigate(path);
-
     }
+
     const routerChangeContactUs=()=>{
         const path = "/ContactUs"
         navigate(path);
-
     }
+
     return (
         <div className='Menu'>
             <Button onClick={routeChangeHomePage}>Home Page</Button>
@@ -42,5 +39,4 @@ import HomePage from '../pages/HomePage';
     );
 }
  
- export default Menu
- 
+ export default Menu;
