@@ -1,12 +1,10 @@
 import { Flex } from "@chakra-ui/react";
-import courseStore from "../stores/CourseStore";
+import CoursesCards from "../cards/CoursesCards";
 
 const Courses = () => {
   return (
     <Flex>
-      {courseStore.courses.map(course => (
-        <CourseCard course={course} />
-      ))}
+        <CoursesCards/>
     </Flex>
   );
 };
