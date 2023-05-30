@@ -1,11 +1,11 @@
+import { Flex } from "@chakra-ui/react";
+import LecturersCards from "../cards/LecturersCards";
 
 const Lecturers = () => {
   return (
-    <>
-      <div className="container">
-        <h1>Lecturers</h1>
-      </div>
-    </>
+    <Flex>
+      <LecturersCards/>
+    </Flex>
   );
 };
 

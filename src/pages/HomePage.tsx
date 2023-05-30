@@ -26,12 +26,10 @@ const HomePage = () => {
           <UserInfo />
         </div>
       </div>
-      {/* <Button onClick={routeChange}>Login</Button> */}
       <Menu />
       <Box w="full" h="full" bg="#ccc">
         <Outlet />
       </Box>
-      {/* <OurCourses/> */}
     </>
   );
 };
