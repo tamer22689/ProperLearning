@@ -31,17 +31,11 @@ const Register = () => {
     <h1>Register</h1>
             <br></br>
             <Input onChange={event => setFirstname(event.target.value)} placeholder="first name"/>
-            <div className="first name">{firstname}</div>
             <Input onChange={event => setLastname(event.target.value)} placeholder="last name"/>
-            <div className="last name">{lastname}</div>
             <Input onChange={event => setUsername(event.target.value)} placeholder="user name"/>
-            <div className="user name">{username}</div>
             <Input onChange={event => setEmail(event.target.value)} placeholder="email"/>
-            <div className="email">{email}</div>
             <Input onChange={event => setPassword(event.target.value)} placeholder="password"/>
-            <div className="password">{password}</div>
             <Input onChange={event => setConfirmpassword(event.target.value)} placeholder="confirm password"/>
-            <div className="confirm password">{confirmpassword}</div>
             <Button onClick={routeChange}>submit</Button>
     </>
   );
