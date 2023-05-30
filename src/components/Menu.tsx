@@ -1,42 +1,23 @@
-import { Button } from '@chakra-ui/react';
-import './Menu.css'
+import { Button, Flex, HStack } from "@chakra-ui/react";
+import "./Menu.css";
 import { useNavigate } from "react-router-dom";
 
- function Menu() {
-    const navigate = useNavigate();
-    const routeChangeHomePage = () =>{ 
-        const path = "/"; 
-        navigate(path);
-    }
-    const routerChangeCourses=()=>{
-        const path = "/Courses"
-        navigate(path);
-    }
+function Menu() {
+  const navigate = useNavigate();
 
-    const routerChangeLecturers=()=>{
-        const path = "/Lecturers"
-        navigate(path);
-    }
+  function routeTo(to: string) {
+    navigate(to);
+  }
 
-    const routerChangeExams=()=>{
-        const path = "/Exams"
-        navigate(path);
-    }
-
-    const routerChangeContactUs=()=>{
-        const path = "/ContactUs"
-        navigate(path);
-    }
-
-    return (
-        <div className='Menu'>
-            <Button onClick={routeChangeHomePage}>Home Page</Button>
-            <Button onClick={routerChangeCourses}>Courses</Button>
-            <Button onClick={routerChangeLecturers}>Lecturers</Button>
-            <Button onClick={routerChangeExams}>Exams</Button>
-            <Button onClick={routerChangeContactUs}>Contact Us</Button>
-        </div>
-    );
+  return (
+    <Flex justify={"space-around"}>
+      <Button onClick={() => routeTo("/")}>Home Page</Button>
+      <Button onClick={() => routeTo("/Courses")}>Courses</Button>
+      <Button onClick={() => routeTo("/Lecturers")}>Lecturers</Button>
+      <Button onClick={() => routeTo("/Exams")}>Exams</Button>
+      <Button onClick={() => routeTo("/ContactUs")}>Contact Us</Button>
+    </Flex>
+  );
 }
- 
- export default Menu;
+
+export default Menu;
