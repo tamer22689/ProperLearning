@@ -10,12 +10,14 @@ import Courses from "./pages/Courses.tsx";
 import Lecturers from "./pages/Lecturers";
 import Exams from "./pages/Exams";
 import ContactUs from "./pages/ContactUs";
+import MainPage from "./pages/MainPage.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
     children: [
+      { path: "", element: <MainPage /> },
       { path: "Courses", element: <Courses /> },
       {
         path: "/Lecturers",

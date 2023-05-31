@@ -10,7 +10,7 @@ function Menu() {
   }
 
   return (
-    <Flex justify={"space-around"} position={'relative'} top={'20px'}>
+    <Flex justify={"space-around"} my={5}>
       <Button onClick={() => routeTo("/")}>Home Page</Button>
       <Button onClick={() => routeTo("/Courses")}>Courses</Button>
       <Button onClick={() => routeTo("/Lecturers")}>Lecturers</Button>

@@ -7,14 +7,13 @@ import { Box } from "@chakra-ui/react";
 import Image from "../components/Image";
 import Logo from "../components/Logo";
 
-
 const HomePage = () => {
   return (
     <>
       <div className="navbar">
         <div className="navbar-left">
           <div style={{ marginRight: "10px" }}>
-            <Logo/>
+            <Logo />
           </div>
           <Search />
         </div>
@@ -22,11 +21,11 @@ const HomePage = () => {
           <UserInfo />
         </div>
       </div>
-      <Image/>
+      <Image />
       <Menu />
-      <Box w="full" h="full" bg="#ccc">
+      <Box w="full" h="full">
+        <Outlet />
       </Box>
-      <Outlet />
     </>
   );
 };

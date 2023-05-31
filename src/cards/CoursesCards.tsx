@@ -3,9 +3,12 @@ import courseStore from '../stores/CourseStore'
 
 function CoursesCards() {
   return (
-    <Flex position={'relative'} top={'40px'} >
+    <Flex wrap={'wrap'} justify={"space-around"}
+    // position={'relative'} 
+    // top={'40px'} 
+    >
       {courseStore.courses.map(course => (
-      <Card key={course.id} maxW='sm' display={'flex'}>
+      <Card key={course.id} maxW='xs' display={'flex'}>
       <CardBody>
         <Image height={'200px'}
           src={course.imageUrl}
