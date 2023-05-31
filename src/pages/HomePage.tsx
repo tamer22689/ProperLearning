@@ -5,6 +5,8 @@ import Search from "../components/Search";
 import Logo1 from "../assets/images/Logo1.png";
 import Menu from "../components/Menu";
 import { Box } from "@chakra-ui/react";
+import OurCourses from "../components/OurCourses";
+import OurLecturers from "../components/OurLecturers";
 
 
 const HomePage = () => {
@@ -28,8 +30,8 @@ const HomePage = () => {
       </div>
       <Menu />
       <Box w="full" h="full" bg="#ccc">
-        <Outlet />
       </Box>
+      <Outlet />
     </>
   );
 };

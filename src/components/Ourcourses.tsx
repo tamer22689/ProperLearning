@@ -1,11 +1,16 @@
-import './Ourcourses.css'
+import CoursesCards from '../cards/CoursesCards'
 
-const Ourcourses = () => {
+
+const OurCourses = () => {
   return (
-    <div className='ourcourses'>
-      <h1>Our Courses</h1>
+    <>
+    <h1>The Most Rating Courses</h1>
+    <div className='ratingcourses'>
+      <CoursesCards/>
     </div>
+    </>
+    
   )
 }
 
-export default Ourcourses
+export default OurCourses;
