@@ -1,4 +1,4 @@
-import { Button, Flex, HStack } from "@chakra-ui/react";
+import { Button, Flex } from "@chakra-ui/react";
 import "./Menu.css";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ function Menu() {
   }
 
   return (
-    <Flex justify={"space-around"}>
+    <Flex justify={"space-around"} position={'relative'} top={'20px'}>
       <Button onClick={() => routeTo("/")}>Home Page</Button>
       <Button onClick={() => routeTo("/Courses")}>Courses</Button>
       <Button onClick={() => routeTo("/Lecturers")}>Lecturers</Button>

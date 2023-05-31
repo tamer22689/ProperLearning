@@ -3,7 +3,7 @@ import { Button, Flex, FormControl, FormLabel, Input, Select } from "@chakra-ui/
 const ContactUs = () => {
   return (
     <>
-      <Flex>
+      <Flex position={'relative'} top={'40px'} >
         <FormControl isRequired>
           <FormLabel>User Name</FormLabel>
           <Input placeholder='username' />

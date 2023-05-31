@@ -1,10 +1,11 @@
+import { Flex } from "@chakra-ui/react";
 
 const Exams = () => {
   return (
     <>
-      <div className="container">
-        <h1>Exams</h1>
-      </div>
+    <Flex position={'relative'} top={'40px'} >
+      <h1>Exams</h1>
+    </Flex> 
     </>
   );
 };

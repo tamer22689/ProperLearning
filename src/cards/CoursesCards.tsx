@@ -1,11 +1,11 @@
-import { Card, CardBody, CardFooter, Heading, Stack, Text, ButtonGroup, Button, Divider, Image, Flex } from '@chakra-ui/react'
+import { Card, CardBody, CardFooter, Heading, Stack, Text, Divider, Image, Flex } from '@chakra-ui/react'
 import courseStore from '../stores/CourseStore'
 
 function CoursesCards() {
   return (
-    <Flex>
+    <Flex position={'relative'} top={'40px'} >
       {courseStore.courses.map(course => (
-      <Card key={course.id} maxW='sm'>
+      <Card key={course.id} maxW='sm' display={'flex'}>
       <CardBody>
         <Image height={'200px'}
           src={course.imageUrl}
@@ -15,7 +15,6 @@ function CoursesCards() {
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{course.title}</Heading>
           <Text>{course.description}</Text>
-          
         </Stack>
       </CardBody>
       <Divider />
@@ -28,4 +27,4 @@ function CoursesCards() {
   )
 }
 
-export default CoursesCards
+export default CoursesCards;
