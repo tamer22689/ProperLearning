@@ -2,9 +2,9 @@ import { Card, CardBody, Heading, Stack, Text, Image, Flex } from '@chakra-ui/re
 import lecturerStore from '../stores/LecturerStore'
 function LecturersCards() {
   return (
-    <Flex position={'relative'} top={'40px'}>
+    <Flex wrap={'wrap'} justify={"space-around"} my={5}>
       {lecturerStore.lecturers.map(lecturer => (
-      <Card key={lecturer.id} maxW='sm' display={'flex'}>
+      <Card key={lecturer.id} maxW='xs' display={'flex'}>
       <CardBody>
         <Image height={'200px'}
           src={lecturer.imageUrl}

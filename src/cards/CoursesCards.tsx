@@ -3,7 +3,7 @@ import courseStore from '../stores/CourseStore'
 
 function CoursesCards() {
   return (
-    <Flex wrap={'wrap'} justify={"space-around"}
+    <Flex wrap={'wrap'} justify={"space-around"} my={5}
     // position={'relative'} 
     // top={'40px'} 
     >
