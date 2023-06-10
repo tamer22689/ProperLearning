@@ -1,8 +1,10 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, toJS } from "mobx";
+import { User } from "../model/User";
 
 class UserStore {
     loggedIn = false;
     users: Array<User> = [];
+    currentUser:User|undefined=undefined;
 
     constructor() {
         makeAutoObservable(this);
@@ -19,9 +21,20 @@ class UserStore {
     }
     
 
-    addUser(user: User) {
-        console.log(user);
-        this.users.push(user);
+    async addUser(user: User) {
+
+        const response = await fetch("http://localhost:3001/createUser", {
+            method: "POST",
+            body: JSON.stringify(user),
+            headers: {
+                "Content-Type": "application/json",
+              },
+        });
+        console.log(response)
+        if(response.status !== 200) {
+            return false;
+        }
+        return true;
     }
     
     async login(username: string, password: string) {
@@ -33,28 +46,41 @@ class UserStore {
         //     this.setLoggedIn(true);
         //     return true;
         // }
-        const requestBody = {
-            username: username,
-            password: password
-        }
-        const response = await fetch("http://localhost:3001/login", {
-            method: "POST",
-            body: JSON.stringify(requestBody),
-            headers: {
-                "Content-Type": "application/json",
-              },
-        });
-        console.log(response)
-        if(response.status !== 200) {
+        try {
+            const requestBody = {
+                username: username,
+                password: password
+            }
+            const response = await fetch("http://localhost:3001/login", {
+                method: "POST",
+                body: JSON.stringify(requestBody),
+                headers: {
+                    "Content-Type": "application/json",
+                  },
+            });
+            console.log(response)
+            if(response.status !== 200) {
+                this.setLoggedIn(false);
+                return Promise.resolve(false);
+            }
+            this.setLoggedIn(true);
+            
+            this.currentUser=await response.json() as User ;
+            console.log(toJS(this.currentUser));
+            return Promise.resolve(true);
+            
+        } catch (error) {
             this.setLoggedIn(false);
-            return Promise.resolve(false);
+            console.log(error);
+            return false;
+            
         }
-        this.setLoggedIn(true);
-        return Promise.resolve(true);
+        
     }
 
     logout() {
         this.setLoggedIn(false);
+        this.currentUser=undefined;
     }
 
 

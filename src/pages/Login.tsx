@@ -15,7 +15,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-      const logiSucces=()=>{
+      const logiSucces=async ()=>{
         // if(username === 'tamer' && password ==='123'){
         //     routeChange_home();
 
@@ -28,7 +28,7 @@ function Login() {
         console.log(toJS(UserStore.users));
         const result = UserStore.login(username, password);
         console.log(result)
-        if(result)
+        if(await result)
             routeChange_home();
         else {
             // todo: present error message
@@ -40,9 +40,7 @@ function Login() {
             <h1>Login</h1>
             <br></br>
             <Input onChange={event => setUsername(event.target.value)} placeholder="username" />
-            <div className="user">{username}</div>
             <Input onChange={event => setPassword(event.target.value)} placeholder="password" />
-            <div className="password">{password}</div>
             <Button onClick={logiSucces}>submit</Button>
             <div>{errorMessage}</div>
         </>

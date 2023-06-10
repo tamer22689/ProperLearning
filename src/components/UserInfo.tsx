@@ -26,7 +26,7 @@ const UserInfo = observer(() => {
     <div className="container">
       {UserStore.isLoggedIn ? (
         <HStack>
-          <div>Hello,tamer</div>
+          <div>Hello,{UserStore.currentUser?.username}</div>
           <Button onClick={handleLogout}>Logout</Button>
         </HStack>
       ) : (

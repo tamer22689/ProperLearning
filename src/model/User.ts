@@ -1,7 +1,8 @@
-interface User {
+export interface User {
     id?: string,
     username: string,
     password: string,
-    fname: string,
-    lname: string,
+    firstname: string,
+    lastname: string,
+    email: string
 }
