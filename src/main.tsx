@@ -11,6 +11,7 @@ import Lecturers from "./pages/Lecturers";
 import Exams from "./pages/Exams";
 import ContactUs from "./pages/ContactUs";
 import MainPage from "./pages/MainPage.tsx";
+import AdminHomePage from "./pages/AdminHomePage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <MainPage /> },
       { path: "Courses", element: <Courses /> },
+      
       {
         path: "/Lecturers",
         element: <Lecturers />,
@@ -41,6 +43,7 @@ const router = createBrowserRouter([
     path: "/Register",
     element: <Register />,
   },
+  { path: "AdminHomePage", element: <AdminHomePage /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
