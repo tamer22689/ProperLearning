@@ -1,5 +1,6 @@
 import { Card, CardBody, CardFooter, Heading, Stack, Text, Divider, Image, Flex } from '@chakra-ui/react'
-import courseStore from '../stores/CourseStore'
+import CourseArray from '../data/CourseArray';
+
 
 function CoursesCards() {
   return (
@@ -7,7 +8,7 @@ function CoursesCards() {
     // position={'relative'} 
     // top={'40px'} 
     >
-      {courseStore.courses.map(course => (
+      {CourseArray.courses.map(course => (
       <Card key={course.id} maxW='xs' display={'flex'}>
       <CardBody>
         <Image height={'200px'}
