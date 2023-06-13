@@ -14,7 +14,9 @@ function Login() {
       const logiSucces=async ()=>{
         const user = await UserStore.login(username, password);
         const isAdmim = await UserStore.currentUser?.isAdmin
+
         if(user){
+           
             if(isAdmim){
                 navigate("/AdminHomePage")
             }

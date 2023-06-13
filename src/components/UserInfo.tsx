@@ -1,10 +1,11 @@
-import { Button, HStack } from "@chakra-ui/react";
+import { Button, HStack, layout } from "@chakra-ui/react";
 //import { useState } from "react"
 
 import "./UserInfo.css";
 import { useNavigate } from "react-router-dom";
 import UserStore from "../stores/UserStore";
 import { observer } from "mobx-react";
+import Layout from "../shared/Layaut/Layout";
 
 const UserInfo = observer(() => {
   //const [username, setUsername] = useState("")
@@ -22,7 +23,11 @@ const UserInfo = observer(() => {
     UserStore.logout()
   }
 
+  console.log(UserStore.currentUser);
+  
+
   return (
+    <Layout>
     <div className="container">
       {UserStore.isLoggedIn ? (
         <HStack>
@@ -36,6 +41,7 @@ const UserInfo = observer(() => {
         </>
       )}
     </div>
+      </Layout>
   );
 });
 

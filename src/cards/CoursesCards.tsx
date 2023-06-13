@@ -1,13 +1,9 @@
 import { Card, CardBody, CardFooter, Heading, Stack, Text, Divider, Image, Flex } from '@chakra-ui/react'
 import CourseArray from '../data/CourseArray';
 
-
 function CoursesCards() {
   return (
-    <Flex wrap={'wrap'} justify={"space-around"} my={5}
-    // position={'relative'} 
-    // top={'40px'} 
-    >
+    <Flex wrap={'wrap'} justify={"space-around"} my={5}>
       {CourseArray.courses.map(course => (
       <Card key={course.id} maxW='xs' display={'flex'}>
       <CardBody>
