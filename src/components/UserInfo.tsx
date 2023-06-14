@@ -4,10 +4,17 @@ import { Button, HStack, layout } from "@chakra-ui/react";
 import "./UserInfo.css";
 import { useNavigate } from "react-router-dom";
 import UserStore from "../stores/UserStore";
-import { observer } from "mobx-react";
-import Layout from "../shared/Layaut/Layout";
 
-const UserInfo = observer(() => {
+import { useSelector} from 'react-redux'
+
+import Layout from "../shared/Layaut/Layout";
+import { RootState } from "../rdx/store";
+import { userSvc } from "../services/user/user.svc";
+
+const UserInfo = () => {
+
+  const {currentUser,loggedIn} = useSelector((state: RootState)=>state.rdxCurrentUser)
+
   //const [username, setUsername] = useState("")
   const navigate = useNavigate();
   const routeChange_Register = () => {
@@ -20,18 +27,16 @@ const UserInfo = observer(() => {
   };
 
   function handleLogout() {
-    UserStore.logout()
-  }
-
-  console.log(UserStore.currentUser);
+    userSvc.logout()
+}
   
 
   return (
     <Layout>
     <div className="container">
-      {UserStore.isLoggedIn ? (
+      {loggedIn ? (
         <HStack>
-          <div>Hello,{UserStore.currentUser?.username}</div>
+          <div>Hello,{currentUser?.username}</div>
           <Button onClick={handleLogout}>Logout</Button>
         </HStack>
       ) : (
@@ -43,6 +48,6 @@ const UserInfo = observer(() => {
     </div>
       </Layout>
   );
-});
+};
 
 export default UserInfo;

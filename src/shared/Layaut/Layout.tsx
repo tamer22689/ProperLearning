@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { ELocalStorage } from '../enums';
 import UserStore from '../../stores/UserStore';
 import { User } from '../../model/User';
+import { userSvc } from '../../services/user/user.svc';
 
 type Props = React.PropsWithChildren;
 
@@ -16,11 +17,9 @@ const Layout = ({ children }: Props) => {
                 console.log('user in layout ', user);
 
                 if (user) {
-                    UserStore.setCurrentUser(user)
-                    UserStore.setLoggedIn(true);
+                  userSvc.setRdxCurrentUser(user)
                 } else {
-                    UserStore.setCurrentUser(undefined)
-                    UserStore.setLoggedIn(false)
+                    userSvc.setRdxCurrentUser(undefined)
                 }
             }
 

@@ -20,7 +20,8 @@ const Register = () => {
     // todo: check is password === confirmPassword
     console.log(toJS(UserStore.users));
     const newUser: User = {
-      firstname, lastname, username, email, password
+      firstname, lastname, username, email, password,
+      isAdmin: false
     }
     UserStore.addUser(newUser);
 

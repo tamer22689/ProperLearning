@@ -85,6 +85,7 @@ class UserStore {
     logout() {
         this.setLoggedIn(false);
         this.currentUser = undefined;
+        localStorage.removeItem(ELocalStorage.USER);
     }
 
     setUserLoggedIn(loggedin: boolean) {

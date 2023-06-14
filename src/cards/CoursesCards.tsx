@@ -2,6 +2,8 @@ import { Card, CardBody, CardFooter, Heading, Stack, Text, Divider, Image, Flex 
 import CourseArray from '../data/CourseArray';
 
 function CoursesCards() {
+
+
   return (
     <Flex wrap={'wrap'} justify={"space-around"} my={5}>
       {CourseArray.courses.map(course => (
