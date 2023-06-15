@@ -7,15 +7,15 @@ import { Provider } from 'react-redux'
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Login from "./pages/Login.tsx";
-import HomePage from "./pages/HomePage";
-import Register from "./pages/Register.tsx";
+import Login from "./pages/Login/Login.tsx";
+import HomePage from "./pages/HomePage/HomePage.tsx";
+import Register from "./pages/Register/Register.tsx";
 import Courses from "./pages/Courses.tsx";
-import Lecturers from "./pages/Lecturers";
-import Exams from "./pages/Exams";
-import ContactUs from "./pages/ContactUs";
+import Lecturers from "./pages/Lecturers/Lecturers.tsx";
+import Exams from "./pages/Exams/Exams.tsx";
+import ContactUs from "./pages/ContactUs/ContactUs.tsx";
 import MainPage from "./pages/MainPage.tsx";
-import AdminHomePage from "./pages/AdminHomePage.tsx";
+import AdminHomePage from "./pages/AdminHomePage/AdminHomePage.tsx";
 
 const router = createBrowserRouter([
   {

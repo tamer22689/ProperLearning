@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
 
-import { userSvc } from "../services/user/user.svc";
+import { userSvc } from "../../services/user/user.svc";
 
 function Login() {
     const navigate = useNavigate(); 

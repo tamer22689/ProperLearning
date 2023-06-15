@@ -2,9 +2,9 @@ import { Button, Input } from "@chakra-ui/react"
 import "./Register.css"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import UserStore from "../stores/UserStore";
+import UserStore from "../../stores/UserStore";
 import { toJS } from "mobx";
-import { User } from "../model/User";
+import { User } from "../../model/User";
 
 const Register = () => {
 

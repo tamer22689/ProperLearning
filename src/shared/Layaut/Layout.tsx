@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { ELocalStorage } from '../enums';
-import UserStore from '../../stores/UserStore';
 import { User } from '../../model/User';
 import { userSvc } from '../../services/user/user.svc';
 

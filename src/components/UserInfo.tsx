@@ -1,9 +1,8 @@
-import { Button, HStack, layout } from "@chakra-ui/react";
+import { Button, HStack } from "@chakra-ui/react";
 //import { useState } from "react"
 
 import "./UserInfo.css";
 import { useNavigate } from "react-router-dom";
-import UserStore from "../stores/UserStore";
 
 import { useSelector} from 'react-redux'
 
