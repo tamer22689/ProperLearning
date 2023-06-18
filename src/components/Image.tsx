@@ -1,13 +1,13 @@
-import { Flex } from "@chakra-ui/react"
+import { Flex , Image as ChImage} from "@chakra-ui/react"
 
 
 function Image() {
   return (
-        <Flex width={'100%'} height={'200px'}>
-            <img 
+        <Flex width={'100%'} height={'400px'} justifyContent={'center'}>
+            <ChImage 
             src='src\assets\images\backgrounds\proper-Learning-9.jpg' alt=''
-            width={'100%'}
-            height={'50%'}/>
+            width={'500px'}
+            height={'400px'}/>
         </Flex>
     
   )

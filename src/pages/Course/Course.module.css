@@ -1,0 +1,36 @@
+
+.continer{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.list::-webkit-scrollbar{
+    display: none;
+}
+
+.section{
+    padding: 20px;
+    border-bottom:1px solid black ;
+    cursor: pointer;
+}
+
+.sectionContent{
+    padding: 15px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.sectionContent::-webkit-scrollbar{
+    display: none;
+}

@@ -1,3 +1,9 @@
+.register{
+    display: grid;
+}
+.Input{
+    
+}
 button{
     color: blue;
 }

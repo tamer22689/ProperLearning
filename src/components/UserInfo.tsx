@@ -31,7 +31,7 @@ const UserInfo = () => {
   
 
   return (
-    <Layout>
+
     <div className="container">
       {loggedIn ? (
         <HStack>
@@ -45,7 +45,7 @@ const UserInfo = () => {
         </>
       )}
     </div>
-      </Layout>
+      
   );
 };
 

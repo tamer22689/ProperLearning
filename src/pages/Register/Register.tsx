@@ -29,7 +29,7 @@ const Register = () => {
     navigate('/');
   }
   return (
-    <>
+    <div className="register">
       <h1>Register</h1>
       <br></br>
       <Input onChange={event => setFirstname(event.target.value)} placeholder="first name" />
@@ -39,7 +39,7 @@ const Register = () => {
       <Input onChange={event => setPassword(event.target.value)} placeholder="password" />
       <Input onChange={event => setConfirmpassword(event.target.value)} placeholder="confirm password" />
       <Button onClick={routeChange}>submit</Button>
-    </>
+    </div>
   );
 }
 export default Register

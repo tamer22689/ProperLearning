@@ -16,6 +16,9 @@ import Exams from "./pages/Exams/Exams.tsx";
 import ContactUs from "./pages/ContactUs/ContactUs.tsx";
 import MainPage from "./pages/MainPage.tsx";
 import AdminHomePage from "./pages/AdminHomePage/AdminHomePage.tsx";
+import { Course } from "./pages/Course/Course.tsx";
+import { ThemeProvider } from "@emotion/react";
+import theme from "./styles/theme.ts";
 
 const router = createBrowserRouter([
   {
@@ -37,11 +40,12 @@ const router = createBrowserRouter([
         path: "/ContactUs",
         element: <ContactUs />,
       },
-      {
-        path: "/cource/:id",
-        element: <ContactUs />,
-      },
+      
     ],
+  },
+  {
+    path: "/course/:id",
+    element: <Course />,
   },
   {
     path: "/Login",
@@ -57,9 +61,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-
-      <RouterProvider router={router} />
-    
+   
+        <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );

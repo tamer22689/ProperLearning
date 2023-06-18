@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { ELocalStorage } from '../enums';
 import { User } from '../../model/User';
 import { userSvc } from '../../services/user/user.svc';
+import { Header } from './components/Header';
+
 
 type Props = React.PropsWithChildren;
 
@@ -27,7 +29,8 @@ const Layout = ({ children }: Props) => {
     }, [])
 
     return (
-        <div>
+        <div style={{height: '100%'}}>
+             {/* <Header/> */}
             <main>{children}</main>
         </div>
     )
