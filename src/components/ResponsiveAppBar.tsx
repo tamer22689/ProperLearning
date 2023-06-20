@@ -2,7 +2,7 @@ import { Button } from '@chakra-ui/react';
 import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 
-const Menu = () => {
+const ResponsiveAppBar = () => {
     const navigate = useNavigate();
 
     function routeTo(to: string) {
@@ -19,4 +19,4 @@ const Menu = () => {
     );
 }
 
-export default Menu;
+export default ResponsiveAppBar

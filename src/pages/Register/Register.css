@@ -1,9 +1,24 @@
-.register{
-    display: grid;
-}
-.Input{
-    
-}
-button{
+h1 {
     color: blue;
+}
+
+.form-Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.form {
+    width: 380px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+button {
+    margin-top: 40px;
+    margin-bottom: 10px;
 }

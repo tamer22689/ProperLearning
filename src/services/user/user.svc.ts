@@ -1,3 +1,4 @@
+import { Course } from "../../model/Course";
 import { User } from "../../model/User";
 import { userApi } from "../../rdx/apis/user.api";
 import { userActions } from "../../rdx/stateSlices/user/user.rdx";
@@ -39,6 +40,27 @@ class UserSvc {
             store.dispatch(userActions.setLoggedIn(true))
         }else{
             store.dispatch(userActions.reset())
+        }
+    }
+
+
+    async StartCourse(course:Course | undefined , userid:string | undefined){
+        console.log(userid , course);
+        
+        if(userid && course){
+            
+            console.log(course);
+
+          const res = await  store.dispatch(userApi.endpoints.addCourse.initiate({
+            userid,
+            course :{courseId:course.id , score:0, exams:[]}
+          })).unwrap()
+
+
+          userSvc.setRdxCurrentUser(res)
+
+          localStorage.setItem(ELocalStorage.USER,JSON.stringify(res))
+
         }
     }
 }

@@ -1,5 +1,6 @@
 #root {
     /* max-width: 1200px; */
+    background:linear-gradient(to left, green, white);
     margin: 0 auto;
     padding: 0;
     text-align: center;

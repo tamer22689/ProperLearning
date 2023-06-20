@@ -21,7 +21,8 @@ const Register = () => {
     console.log(toJS(UserStore.users));
     const newUser: User = {
       firstname, lastname, username, email, password,
-      isAdmin: false
+      isAdmin: false,
+      courses:[]
     }
     UserStore.addUser(newUser);
 
@@ -29,16 +30,19 @@ const Register = () => {
     navigate('/');
   }
   return (
-    <div className="register">
-      <h1>Register</h1>
-      <br></br>
-      <Input onChange={event => setFirstname(event.target.value)} placeholder="first name" />
-      <Input onChange={event => setLastname(event.target.value)} placeholder="last name" />
-      <Input onChange={event => setUsername(event.target.value)} placeholder="user name" />
-      <Input onChange={event => setEmail(event.target.value)} placeholder="email" />
-      <Input onChange={event => setPassword(event.target.value)} placeholder="password" />
-      <Input onChange={event => setConfirmpassword(event.target.value)} placeholder="confirm password" />
-      <Button onClick={routeChange}>submit</Button>
+    <div className="form-Container">
+      <div className="form">
+
+        <h1>Register</h1>
+        <br></br>
+        <Input onChange={event => setFirstname(event.target.value)} placeholder="first name" />
+        <Input onChange={event => setLastname(event.target.value)} placeholder="last name" />
+        <Input onChange={event => setUsername(event.target.value)} placeholder="user name" />
+        <Input onChange={event => setEmail(event.target.value)} placeholder="email" />
+        <Input onChange={event => setPassword(event.target.value)} placeholder="password" />
+        <Input onChange={event => setConfirmpassword(event.target.value)} placeholder="confirm password" />
+        <Button onClick={routeChange}>submit</Button>
+      </div>
     </div>
   );
 }
