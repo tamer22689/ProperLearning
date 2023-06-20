@@ -2,43 +2,44 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { User } from '../../../model/User'
 
-export interface ICurrentUserSlice {currentUser:User,loggedIn: boolean}
+export interface ICurrentUserSlice { currentUser: User, loggedIn: boolean }
 
-const initialState:ICurrentUserSlice = {
-  currentUser:{
-    email:'',
-    firstname:'',
-    lastname:'',
-    isAdmin:false,
-    password:'',
-    username:'',
-    id:''
-
+const initialState: ICurrentUserSlice = {
+  currentUser: {
+    email: '',
+    firstname: '',
+    lastname: '',
+    isAdmin: false,
+    password: '',
+    username: '',
+    id: '',
+    courses: []
   },
-loggedIn: false
+  loggedIn: false
 }
 
 export const currentUserSlice = createSlice({
   name: 'currentUser',
   initialState,
-  reducers: 
+  reducers:
   {
     setLoggedIn(state, action: PayloadAction<boolean>) {
-        state.loggedIn = action.payload;
+      state.loggedIn = action.payload;
     },
 
     setCurrentUser(state, action: PayloadAction<User>) {
-        state.currentUser = action.payload;
+      state.currentUser = action.payload;
     },
 
-    reset(state){
+    reset(state) {
       state.currentUser = initialState.currentUser
       state.loggedIn = false
     }
-    
-  }})
 
-  export const userActions = currentUserSlice.actions
+  }
+})
 
-  export const currentUserReducer = currentUserSlice.reducer
+export const userActions = currentUserSlice.actions
+
+export const currentUserReducer = currentUserSlice.reducer
 

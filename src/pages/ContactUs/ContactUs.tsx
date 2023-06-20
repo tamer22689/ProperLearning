@@ -1,23 +1,31 @@
-import { Button, Flex, FormControl, FormLabel, Input, Select } from "@chakra-ui/react";
+import { useState } from "react";
+import './ContactUs.css'
 
 const ContactUs = () => {
+
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [descreption, setDescreption] = useState('');
+  const [Message, setMessage] = useState('');
+
+  const onSubmit =()=>{
+    if(descreption){
+      setMessage('Ok')
+    }else{
+      setMessage('Error')
+    }
+  }
+
   return (
-    <>
-      <Flex position={'relative'} top={'40px'} >
-        <FormControl isRequired>
-          <FormLabel>User Name</FormLabel>
-          <Input placeholder='username' />
-          <FormLabel>Email</FormLabel>
-          <Input placeholder='email' />
-          <Select placeholder='Whats Wrong?'>
-            <option>other</option>
-          </Select>
-          <FormLabel>Discraption</FormLabel>
-          <Input placeholder='discraption' />
-          <Button placeholder="submit">Submit</Button>
-        </FormControl>
-      </Flex>
-    </>
+    <div className="form-Container">
+      <div className="form">
+        <input onChange={event => setUsername(event.target.value)} placeholder="username" />
+        <input onChange={event => setEmail(event.target.value)} placeholder="email" />
+        <input onChange={event => setDescreption(event.target.value)} placeholder="descreption" />
+        <button onClick={onSubmit}>submit</button>
+        <div className="Message">{Message}</div>
+      </div>
+    </div>
   );
 };
 
